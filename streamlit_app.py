@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
-
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 st.title("🤾🏻 Estadisticas de la planilla de Balonmano 🤾🏻‍♀️")
 
@@ -28,6 +29,6 @@ st.write(data.describe())
 st.subheader('Gráfico de barras')
 column_to_plot = st.selectbox('Selecciona una columna para el gráfico de barras', data.columns)
 
-#fig, ax = plt.subplots()
-#sns.barplot(x=data.index, y=data[column_to_plot], ax=ax)
-#st.pyplot(fig)
+fig, ax = plt.subplots()
+sns.barplot(x=data.index, y=data[column_to_plot], ax=ax)
+st.pyplot(fig)
