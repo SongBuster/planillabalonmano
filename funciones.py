@@ -1,9 +1,11 @@
-GITHUB_TOKEN = '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'
-RUTA_FICHERO_GITHUB = 'https://raw.githubusercontent.com/SongBuster/planillabalonmano/main/tabla.txt'
-
 import requests
 import pandas as pd
 import base64
+import io
+
+GITHUB_TOKEN = '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'
+RUTA_FICHERO_GITHUB = 'https://raw.githubusercontent.com/SongBuster/planillabalonmano/main/tabla.txt'
+
 
 def leer_fichero_etiq(fichero):
     data = {}
@@ -33,15 +35,16 @@ def filtrar_por_agrupacion(data, agrupacion_deseada):
     return [item['etiqueta'] for item in data.values() if item['agrupacion'] == agrupacion_deseada]
 
 def load_data_from_github():
-    url = "https://raw.githubusercontent.com/SongBuster/planillabalonmano/main/tabla.txt"
-    headers = {"Authorization": f"token {GITHUB_TOKEN}"}
-    response = requests.get(url, headers=headers)
+    url = "https://api.github.com/repos/SongBuster/planillabalonmano/contents/tabla.txt?ref=main"
+    #headers = {"Authorization": f"token {GITHUB_TOKEN}"}
+    response = requests.get(url)
+    print(response.status_code)    
     if response.status_code == 200:
+        print(response)
         file_content = response.json()['content']
         decoded_content = base64.b64decode(file_content).decode('utf-8')
         # Convertir el contenido en DataFrame
-        data = pd.read_csv(pd.compat.StringIO(decoded_content), sep='\t')
+        data = pd.read_csv(io.StringIO(decoded_content), sep='\t')
         return data
-    else:
-        st.error("No se pudo obtener el archivo desde GitHub")
+    else:        
         return None
