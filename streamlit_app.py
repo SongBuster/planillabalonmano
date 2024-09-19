@@ -11,10 +11,6 @@ def pintar_pct_absoluto(pct, allvals):
 
 
 
-st.cache_data(ttl=60)
-st.title("🤾🏻 Estadisticas de la planilla de Balonmano 🤾🏻‍♀️")
-if st.button('Actualizar Datos'):
-    st.cache_data.clear()
 
 # URL del archivo en GitHub (reemplaza por tu URL)
 url = "https://raw.githubusercontent.com/SongBuster/planillabalonmano/main/tabla.txt"
@@ -26,7 +22,7 @@ def load_data(url):
     return pd.read_csv(url, sep='\t')
 
 # Cargar los datos
-df = load_data(url)
+df = fnc.load_data_from_github()
 # Filtrar ataques y defensas
 ataques = df[df['A/D'] == 'A']
 defensas = df[df['A/D'] == 'D']
@@ -59,6 +55,20 @@ etiq_balance = fnc.filtrar_por_agrupacion(etiq_def,"CONTRA")
 df_balance = defensas[defensas['Fase'].isin(etiq_balance)]
 num_balances = df_balance.shape[0]
 goles_balances = df_balance[df_balance["Resultado"] == "GOL RIVAL"].shape[0]
+
+st.cache_data(ttl=60)
+st.title("🤾🏻 Estadisticas de la planilla de Balonmano 🤾🏻‍♀️")
+ult_tiempo = df.tail(1).iloc[0]['Tiempo']
+
+col1, col2, col3= st.columns([1,1,1])
+with col1:
+    st.write(ult_tiempo)
+with col2:    
+    if st.button('Actualizar Datos'):
+        st.cache_data.clear()
+with col3:
+    pass
+
 
 st.markdown("## Resumen Estadístico")
 html ="""
