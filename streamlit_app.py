@@ -18,7 +18,7 @@ url = "https://raw.githubusercontent.com/SongBuster/planillabalonmano/main/tabla
 
 
 # Leer el archivo
-@st.cache_data
+#@st.cache_data
 def load_data(url):
     return pd.read_csv(url, sep='\t')
 
