@@ -1,0 +1,12 @@
+[[pages]]
+path = "pages/1_statsFaseJuego.py"
+name = "Estadísticas Fase de Juego"
+icon = ":handball:"
+url_path = "faseJuego" # You can override the default url path for a page
+
+[[pages]]
+path = "pages/2_prueba.py"
+name = "Estadísticas Situación Numérica"
+icon = ":bar_chart:"
+url_path = "sitNumerica" # You can override the default url path for a page
+
