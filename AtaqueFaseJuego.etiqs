@@ -1,0 +1,12 @@
+Botón 01=={ATAQUE A 6:0,false,true,POSICIONAL}
+Botón 02=={ATAQUE A 5:1,false,false,POSICIONAL}
+Botón 03=={ATAQUE A OTRAS DEF,false,false,POSICIONAL}
+Botón 04=={CONTRAGOL 1ª,false,false,CONTRA}
+Botón 05=={CONTRAGOL 2ª,false,false,CONTRA}
+Botón 06=={,false,false,}
+Botón 07=={CONTR. 1ª,false,false,CONTRA}
+Botón 08=={CONTR. 2ª,false,false,CONTRA}
+Botón 09=={,false,false,}
+Botón 10=={,false,false,}
+Botón 11=={,false,false,}
+Botón 12=={,false,false,}

@@ -1,0 +1,12 @@
+Botón 01=={,false,false,}
+Botón 02=={IGUALDAD,false,true,IGUALDAD}
+Botón 03=={,false,false,}
+Botón 04=={DEF SUP 6x6 SP,false,false,SUPERIORIDAD}
+Botón 05=={DEF INF 6x5,false,false,INFERIORIDAD}
+Botón 06=={,false,false,}
+Botón 07=={DEF DOBLE SUP 5x6 SP,false,false,SUPERIORIDAD}
+Botón 08=={DEF DOBLE INF 6x4 SP,false,false,INFERIORIDAD}
+Botón 09=={,false,false,}
+Botón 10=={DEFENSA 6x7,false,false,INFERIORIDAD}
+Botón 11=={DEF INF 5x7 SP,false,false,INFERIORIDAD}
+Botón 12=={OTRAS,false,false,}

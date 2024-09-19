@@ -1,0 +1,24 @@
+Botón 01=={APERTURA,false,false,}
+Botón 02=={PERMUTA,false,false,}
+Botón 03=={CRUCES,false,false,}
+Botón 04=={CIRCULACIÓN,false,false,}
+Botón 05=={DESDOBLAMIENTO,false,false,}
+Botón 06=={PPSS CONTINUIDAD,false,false,}
+Botón 07=={INFER. PIV 2/3,false,false,}
+Botón 08=={INFER AULA,false,false,}
+Botón 09=={,false,false,}
+Botón 10=={OTROS,false,false,}
+Botón 11=={7 METROS,false,false,}
+Botón 12=={,false,false,}
+Botón 13=={FALLO LANZAMIENTO,false,false,}
+Botón 14=={ERROR TÉCNICO,false,false,}
+Botón 15=={,false,false,}
+Botón 16=={ERROR PASE/RECEP,false,false,}
+Botón 17=={PASIVO,false,false,}
+Botón 18=={,false,false,}
+Botón 19=={,false,false,}
+Botón 20=={,false,false,}
+Botón 21=={,false,false,}
+Botón 22=={VACIO,true,true,}
+Botón 23=={,false,false,}
+Botón 24=={,false,false,}

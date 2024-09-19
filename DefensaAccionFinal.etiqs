@@ -1,0 +1,24 @@
+Botón 01=={PERDER 1x1,false,false,}
+Botón 02=={PERDER 2x2,false,false,}
+Botón 03=={PERDER 2x2 PIVOTE,false,false,}
+Botón 04=={PERDER APERTURA,false,false,}
+Botón 05=={PERDER CRUCES,false,false,}
+Botón 06=={PERDER CIRCULACION,false,false,}
+Botón 07=={PERDER DESDOBLAMIENTO,false,false,}
+Botón 08=={PERDER PPSS CONTINUIDAD,false,false,}
+Botón 09=={,false,false,}
+Botón 10=={ERROR LANZAMIENTO,false,false,}
+Botón 11=={ERROR TECNICO RIVAL,false,false,}
+Botón 12=={,false,false,}
+Botón 13=={RECUPERACIÓN,false,false,}
+Botón 14=={PROVOCAR PASIVO,false,false,}
+Botón 15=={,false,false,}
+Botón 16=={7 METROS,false,false,}
+Botón 17=={,false,false,}
+Botón 18=={,false,false,}
+Botón 19=={,false,false,}
+Botón 20=={,false,false,}
+Botón 21=={,false,false,}
+Botón 22=={VACIO,true,true,}
+Botón 23=={,false,false,}
+Botón 24=={,false,false,}
