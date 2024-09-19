@@ -4,13 +4,14 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 import funciones as fnc
+from io import BytesIO
 
 def pintar_pct_absoluto(pct, allvals):
     absolute = int(pct/100.*sum(allvals))
     return f"{pct:.1f}%\n({absolute})"
 
 
-
+st.set_page_config(layout="wide")
 
 # URL del archivo en GitHub (reemplaza por tu URL)
 url = "https://raw.githubusercontent.com/SongBuster/planillabalonmano/main/tabla.txt"
@@ -64,10 +65,10 @@ else:
     st.title("🤾🏻 Estadisticas de la planilla de Balonmano 🤾🏻‍♀️")
     ult_tiempo = df.tail(1).iloc[0]['Tiempo']
 
-    col1, col2, col3= st.columns([1,1,1])
-    with col1:
+    col1, col2, col3= st.columns([0.15,0.1,0.75])
+    with col2:
         st.write(ult_tiempo)
-    with col2:    
+    with col1:    
         if st.button('Actualizar Datos'):
             st.cache_data.clear()            
     with col3:
@@ -206,6 +207,7 @@ else:
 
     # Grafico de tarta: Ataques totales (posesiones)
 
+    
     fig, ax = plt.subplots(1,2,figsize=(8,4))
 
     # Datos para el gráfico de tarta de ataques
@@ -226,5 +228,8 @@ else:
     fig.legend(labels_ataque, loc='lower left', bbox_to_anchor=(0.1, 0.1), title="Ataques")
     fig.legend(labels_defensa, loc='lower right', bbox_to_anchor=(0.9, 0.1), title="Defensas")
 
-
-    st.pyplot(plt)
+    buf = BytesIO()
+    fig.savefig(buf,format="png")
+    left_co, center_co, last_co = st.columns([0.1,0.8,0.1])
+    with center_co:
+        st.image(buf)   

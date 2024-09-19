@@ -3,7 +3,6 @@ import pandas as pd
 import base64
 import io
 
-GITHUB_TOKEN = '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'
 RUTA_FICHERO_GITHUB = 'https://raw.githubusercontent.com/SongBuster/planillabalonmano/main/tabla.txt'
 
 
