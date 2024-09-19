@@ -11,14 +11,17 @@ def pintar_pct_absoluto(pct, allvals):
 
 
 
+st.cache_data(ttl=60)
 st.title("🤾🏻 Estadisticas de la planilla de Balonmano 🤾🏻‍♀️")
+if st.button('Actualizar Datos'):
+    st.cache_data.clear()
 
 # URL del archivo en GitHub (reemplaza por tu URL)
 url = "https://raw.githubusercontent.com/SongBuster/planillabalonmano/main/tabla.txt"
 
 
 # Leer el archivo
-#@st.cache_data
+
 def load_data(url):
     return pd.read_csv(url, sep='\t')
 
@@ -61,7 +64,7 @@ st.markdown("## Resumen Estadístico")
 html ="""
     <style>
         table {
-            width: 75%;
+            width: 90%;
             margin: 0 auto;
             border-collapse: collapse;
         }
