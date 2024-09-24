@@ -287,3 +287,61 @@ else:
     left_co, center_co, last_co = st.columns([0.1,0.8,0.1])
     with center_co:
         st.image(buf) 
+
+
+    # grafico combinado defensas (barras y lineas)
+    resumen_defensas = defensas.groupby('Fase').agg(
+        Defensas=('Tiempo','count'), #numero de defensas por fase
+        Goles=('Resultado', lambda x: (x == 'GOL RIVAL').sum()), # numero de goles por fase        
+    ).reset_index()
+    resumen_defensas['% Exito'] = ((resumen_defensas['Defensas'] - resumen_defensas['Goles'])  / resumen_defensas['Defensas']) * 100
+
+    todas_fases_def = pd.DataFrame([item['etiqueta'] for item in etiq_def.values() if item['etiqueta'] != ""])
+    todas_fases_def.columns = ['Fase']    
+
+    cruce_fases_def= pd.merge(todas_fases_def, resumen_defensas, on ='Fase', how='left')
+    cruce_fases_def.fillna(0,inplace=True)    
+    cruce_fases_def = cruce_fases_def.sort_values(by='Defensas', ascending=False)
+    
+    # Crear el gráfico combinado
+    fig, ax1 = plt.subplots(figsize=(10, 6))
+
+    # Gráfico de barras para los ataques
+    bars = ax1.bar(cruce_fases_def'Fase'], cruce_fases_def['Defensas'], color='lightblue', label='Defensas', alpha=0.7)
+    ax1.set_xlabel('Fase')
+    ax1.set_ylabel('Número de Defensas', color='blue')
+    ax1.tick_params(axis='y', labelcolor='blue')
+
+    for bar in bars:
+        yval = bar.get_height()
+        if (yval != 0):
+            ax1.text(bar.get_x() + bar.get_width()/2, yval - 0.1, f'{yval:.0f}', ha='center', va='center', color='blue')
+
+    # Rotar etiquetas del eje X 45 grados
+    plt.xticks(rotation=45, ha='right')
+
+    # Crear un segundo eje para la línea del porcentaje de goles
+    ax2 = ax1.twinx()
+    ax2.plot(cruce_fases_def['Fase'], cruce_fases_ataque['% Exito'], color='green', marker='o', label='% Exito', linestyle='-', linewidth=2)
+    ax2.set_ylabel('% Éxito', color='green')
+    ax2.tick_params(axis='y', labelcolor='green')
+    ax2.set_ylim(0, 100)
+
+
+    # Añadir los valores sobre los puntos de la serie de líneas
+    for i, (fase, pct, val) in enumerate(zip(cruce_fases_def['Fase'], cruce_fases_def['% Exito'] , cruce_fases_def['Ataques'])):
+        if (pct != 0):
+            ax2.annotate(f'{pct:.1f}%', (i, pct), textcoords="offset points", xytext=(0, 10), ha='center', color='green')
+    
+
+
+    # Título y leyendas
+    plt.title('Número de Defensas y % de Éxito por Fase')
+    fig.tight_layout()
+
+    # Mostrar el gráfico
+    buf = BytesIO()
+    fig.savefig(buf,format="png")
+    left_co, center_co, last_co = st.columns([0.1,0.8,0.1])
+    with center_co:
+        st.image(buf)  
