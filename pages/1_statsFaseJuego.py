@@ -277,4 +277,13 @@ else:
             ax2.annotate(f'{pct:.1f}%', (i, pct), textcoords="offset points", xytext=(0, 10), ha='center', color='green')
     
 
+    # Título y leyendas
+    plt.title('Número de Ataques y % de Éxito por Fase')
+    fig.tight_layout()
 
+    # Mostrar el gráfico
+    buf = BytesIO()
+    fig.savefig(buf,format="png")
+    left_co, center_co, last_co = st.columns([0.1,0.8,0.1])
+    with center_co:
+        st.image(buf) 
