@@ -15,6 +15,8 @@ def pintar_pct_absoluto(pct, allvals):
 
 # Cargar los datos
 df = fnc.load_data_from_github()
+if st.button('Actualizar Datos'):
+    st.cache_data.clear()
 if df.empty:
     st.write("No se pudo encontrar el fichero de datos.")
 else:
