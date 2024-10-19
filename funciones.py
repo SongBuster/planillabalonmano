@@ -43,7 +43,7 @@ def load_data_from_github():
         file_content = response.json()['content']
         decoded_content = base64.b64decode(file_content).decode('utf-8')
         # Convertir el contenido en DataFrame
-        data = pd.read_csv(io.StringIO(decoded_content), sep='\t')
+        data = pd.read_csv(io.StringIO(decoded_content), sep=',')
         return data
     else:        
         return None
