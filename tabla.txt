@@ -1,4 +1,5 @@
-Tiempo,A_D,Jugada,Jugador,Resultado,Finalista,EnPista1,EnPista2,EnPista3,EnPista4,EnPista5,EnPista6,EnPista759:53,E,A PISTA,25-ANDONI,,false,55,5,25,21,34,7,2
+Tiempo,A_D,Jugada,Jugador,Resultado,Finalista,EnPista1,EnPista2,EnPista3,EnPista4,EnPista5,EnPista6,EnPista7
+59:53,E,A PISTA,25-ANDONI,,false,55,5,25,21,34,7,2
 59:51,S,A BANQUILLO,03-QUILES,,false,55,5,25,21,34,7,2
 59:46,D,LANZAMIENTO RIVAL 9M,34-CORRALES,GOL RIVAL,true,55,5,25,21,34,7,2
 59:38,D,1x1 DEFENSIVO,55-COLOMINA,GOL,false,55,5,25,21,34,7,2
