@@ -1,1 +1,8 @@
 Tiempo,A_D,Jugada,Jugador,Resultado,Finalista,EnPista1,EnPista2,EnPista3,EnPista4,EnPista5,EnPista6,EnPista7
+00:00,E,A PISTA,34-CORRALES,,false,34,11,2,5,14,25,7
+00:00,E,A PISTA,11-MARIO,,false,34,11,2,5,14,25,7
+00:00,E,A PISTA,02-HOYO,,false,34,11,2,5,14,25,7
+00:00,E,A PISTA,05-REINANTE,,false,34,11,2,5,14,25,7
+00:00,E,A PISTA,14-JORGE,,false,34,11,2,5,14,25,7
+00:00,E,A PISTA,25-ANDONI,,false,34,11,2,5,14,25,7
+00:00,E,A PISTA,07-SANTAMARINA,,false,34,11,2,5,14,25,7
