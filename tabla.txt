@@ -1,4 +1,5 @@
 Tiempo,A_D,Jugada,Jugador,Resultado,Finalista,EnPista1,EnPista2,EnPista3,EnPista4,EnPista5,EnPista6,EnPista7
+00:30,A,LANZAMIENTO 6M,25-ANDONI,GOL,true,34,11,2,5,14,25,7
 00:00,E,A PISTA,34-CORRALES,,false,34,11,2,5,14,25,7
 00:00,E,A PISTA,11-MARIO,,false,34,11,2,5,14,25,7
 00:00,E,A PISTA,02-HOYO,,false,34,11,2,5,14,25,7
